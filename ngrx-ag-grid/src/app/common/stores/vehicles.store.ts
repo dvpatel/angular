@@ -13,11 +13,11 @@ export function vehicleReducer(state: any = [], action: Action) {
       return [...state, action.payload];
     case UPDATE_VEHICLE:
       return state.map(vehicle => {
-        return vehicle.make === action.payload.make ? Object.assign({}, vehicle, action.payload) : vehicle;
+        return vehicle.id === action.payload.id ? Object.assign({}, vehicle, action.payload) : vehicle;
       });
     case DELETE_VEHICLE:
       return state.filter(vehicle => {
-        return vehicle.make !== action.payload.make;
+        return vehicle.id !== action.payload.id;
       });
     default:
       return state;

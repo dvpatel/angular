@@ -1,10 +1,15 @@
 <ag-grid-angular style="width: 500px; height: 165px;"
                  class="ag-fresh"
+
+
                  [rowData]="vehicles | async"
                  [columnDefs]="columnDefs"
                  [gridOptions]="gridOptions"
                  (gridReady)="onGridReady($event)"
 		 [enableSorting]="true"
                  [enableFilter]="true"
+
+                 (cellValueChanged)="onRowChanged($event)"
+                 (gridReady)="onGridReady($event)"
                  >
 </ag-grid-angular>

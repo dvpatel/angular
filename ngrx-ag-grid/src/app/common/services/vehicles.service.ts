@@ -27,7 +27,7 @@ export class VehicleService {
   }
 
   saveItem(vehicle: Vehicle) {
-    (vehicle.make) ? this.updateVehicle(vehicle) : this.createVehicle(vehicle);
+    (vehicle.id) ? this.updateVehicle(vehicle) : this.createVehicle(vehicle);
   }
 
   createVehicle(vehicle: Vehicle) {
@@ -38,12 +38,12 @@ export class VehicleService {
   }
 
   updateVehicle(vehicle: Vehicle) {
-    this.http.put(`${VEHICLE_URL}${vehicle.make}`, JSON.stringify(vehicle), HEADER)
+    this.http.put(`${VEHICLE_URL}${vehicle.id}`, JSON.stringify(vehicle), HEADER)
       .subscribe(action => this.store.dispatch({ type: 'UPDATE_VEHICLE', payload: vehicle }));
   }
 
   deleteVehicle(vehicle: Vehicle) {
-    this.http.delete(`${VEHICLE_URL}${vehicle.make}`)
+    this.http.delete(`${VEHICLE_URL}${vehicle.id}`)
       .subscribe(action => this.store.dispatch({ type: 'DELETE_VEHICLE', payload: vehicle }));
   }
 }
