@@ -2,15 +2,15 @@
   "vehicles": [
     {
       "id": 1,
-      "make": "ToyotaX",
+      "make": "Toyota",
       "model": "Celica",
       "price": "35000"
     },
     {
       "id": 2,
       "make": "Ford",
-      "model": "Montero",
-      "price": "32000"
+      "model": "Focus",
+      "price": "3200"
     },
     {
       "id": 3,
@@ -29,6 +29,12 @@
       "make": "Honda",
       "model": "Accord",
       "price": "23000"
+    },
+    {
+      "id": 6,
+      "make": "Tesla",
+      "model": "Model S",
+      "price": "100000"
     }
   ],
   "columndefs": [
