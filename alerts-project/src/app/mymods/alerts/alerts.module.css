@@ -1,0 +1,33 @@
+.square {
+    height: 25px;
+    width: 25px;
+}
+
+.alerts-top ul {
+    list-style-type: none;
+}
+
+.alerts-top li {
+    display: inline-block;
+}
+
+.alerts-top .tooltip .tooltiptext {
+    font-size: 85%;
+    visibility: hidden;
+    background-color: #ff758c;
+
+    border: 1px solid white;
+
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2px 5px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.alerts-top .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
