@@ -1,0 +1,29 @@
+Docs:
+*  https://github.com/angular/angular-cli/wiki/build
+*  https://httpd.apache.org/docs/2.4/mod/mod_proxy.html
+*  http://docs.aws.amazon.com/cli/latest/reference/s3/index.html
+
+Prereq:
+*  npm / ng
+*  aws-cli
+*  git
+*  curl
+
+
+1.  setup aws / s3 with bucket name:  my-app
+
+2.  [ optionally setup apache proxy to point to s3 bucket url ]
+    ProxyPass "/my-toh" "http://my-toh.s3-website-us-east-1.amazonaws.com"
+
+3.  install sample app
+    git clone https://github.com/johnpapa/angular-tour-of-heroes.git <my-app>
+
+3.  invoke s3.sh
+    -  npm install
+    -  ng build --prod  (save space on S3)
+    -  aws s3 deploy
+    -  curl test
+
+4.  Enjoy
+
+5.
