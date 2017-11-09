@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {RedComponentComponent} from "../red-component/red-component.component";
+import {AlertsRenderer} from "./alerts-renderer.component";
 
 import {GridOptions} from "ag-grid/main";
 
@@ -34,7 +35,8 @@ export class MyGridApplicationComponent {
             {headerName: "Id", field: "id", "editable":false},
             {headerName: "Make", field: "make", "editable":true},
             {headerName: "Model", field: "model", cellRendererFramework: RedComponentComponent, "editable":true},
-            {headerName: "Price", field: "price", "editable":true}
+            {headerName: "Price", field: "price", "editable":true},
+            {headerName: "Alert", field: "alert", "editable":false, cellRendererFramework: AlertsRenderer}
         ];
 
     }
@@ -58,4 +60,3 @@ export class MyGridApplicationComponent {
         this.gridOptions.api.selectAll();
     }
 }
-

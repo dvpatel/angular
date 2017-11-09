@@ -4,37 +4,43 @@
       "id": 1,
       "make": "Toyota",
       "model": "Celica",
-      "price": "35000"
+      "price": "35000",
+      "alerts": "xyz"
     },
     {
       "id": 2,
       "make": "Ford",
       "model": "Focus",
-      "price": "3200"
+      "price": "320055",
+      "alerts": "abc"
     },
     {
       "id": 3,
       "make": "Porsche",
-      "model": "Boxter",
-      "price": "72000"
+      "model": "Boxtera",
+      "price": "72000",
+      "alerts": "sojosifd"
     },
     {
       "id": 4,
       "make": "Mercedes",
       "model": "E350",
-      "price": "150000"
+      "price": "150000",
+      "alerts": "98afa9sdf9j"
     },
     {
       "id": 5,
       "make": "Honda",
       "model": "Accord",
-      "price": "23000"
+      "price": "23000",
+      "alerts": "asd992r9jsfj"
     },
     {
       "id": 6,
       "make": "Tesla",
       "model": "Model S",
-      "price": "100000"
+      "price": "100000",
+      "alerts": "aosfj90239jsfjj"
     }
   ],
   "columndefs": [

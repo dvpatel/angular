@@ -1,7 +1,4 @@
-<ag-grid-angular style="width: 500px; height: 165px;"
-                 class="ag-fresh"
-
-
+<ag-grid-angular style="width: 500px; height: 185px;" class="ag-fresh"
                  [rowData]="vehicles | async"
                  [columnDefs]="columnDefs"
                  [gridOptions]="gridOptions"
@@ -10,6 +7,5 @@
                  [enableFilter]="true"
 
                  (cellValueChanged)="onRowChanged($event)"
-                 (gridReady)="onGridReady($event)"
-                 >
+                 (gridReady)="onGridReady($event)">
 </ag-grid-angular>

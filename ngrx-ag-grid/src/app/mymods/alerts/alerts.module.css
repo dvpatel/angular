@@ -1,0 +1,14 @@
+.square {
+    height: 15px;
+    width: 15px;
+}
+
+.alerts-top ul {
+  padding: 0;
+  margin: 0 ;
+  list-style-type: none;
+}
+
+.alerts-top li {
+    display: inline-block;
+}
