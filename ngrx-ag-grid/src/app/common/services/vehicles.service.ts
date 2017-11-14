@@ -1,7 +1,7 @@
 import {Http, Headers} from '@angular/http';
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import {AppStore} from '../models/appstore.model';

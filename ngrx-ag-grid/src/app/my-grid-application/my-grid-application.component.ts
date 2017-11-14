@@ -1,10 +1,10 @@
-import {Component} from "@angular/core";
-import {RedComponentComponent} from "../red-component/red-component.component";
-import {AlertsRenderer} from "./alerts-renderer.component";
+import {Component} from '@angular/core';
+import {RedComponentComponent} from '../red-component/red-component.component';
+import {AlertsRenderer} from './alerts-renderer.component';
 
-import {GridOptions} from "ag-grid/main";
+import {GridOptions} from 'ag-grid/main';
 
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 import {Store} from '@ngrx/store';
 import {AppStore} from '../common/models/appstore.model';
 import {Vehicle} from '../common/models/vehicle.model';
@@ -19,7 +19,7 @@ import {VehicleService} from '../common/services/vehicles.service';
 export class MyGridApplicationComponent {
     gridOptions: GridOptions;
 
-    columnDefs: any[]
+    columnDefs: any[] ;
 
     vS: VehicleService ;
     vehicles: Observable<Array<Vehicle>> ;
@@ -32,19 +32,19 @@ export class MyGridApplicationComponent {
         this.gridOptions = <GridOptions>{};
 
         this.columnDefs = [
-            {headerName: "Id", field: "id", "editable":false},
-            {headerName: "Make", field: "make", "editable":true},
-            {headerName: "Model", field: "model", cellRendererFramework: RedComponentComponent, "editable":true},
-            {headerName: "Price", field: "price", "editable":true},
-            {headerName: "Alert", field: "alert", "editable":false, cellRendererFramework: AlertsRenderer}
+            {headerName: 'Id', field: 'id', 'editable': false},
+            {headerName: 'Make', field: 'make', 'editable': true},
+            {headerName: 'Model', field: 'model', cellRendererFramework: RedComponentComponent, 'editable': true},
+            {headerName: 'Price', field: 'price', 'editable': true},
+            {headerName: 'Alert', field: 'alert', 'editable': false, cellRendererFramework: AlertsRenderer}
         ];
 
     }
 
     onRowChanged(params) {
-       var data = params.data ;
-       var newVal = params.newValue ;
-       var oldVal = params.oldValue ;
+       const data = params.data ;
+       const newVal = params.newValue ;
+       const oldVal = params.oldValue ;
 
        //  POST update only on cell change ;
        if (!(newVal === oldVal)) {

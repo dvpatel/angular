@@ -1,9 +1,9 @@
-import {async, TestBed} from "@angular/core/testing";
+import {async, TestBed} from '@angular/core/testing';
 
-import {AppComponent} from "./app.component";
-import {RedComponentComponent} from "./red-component/red-component.component";
-import {AgGridModule} from "ag-grid-angular";
-import {MyGridApplicationComponent} from "./my-grid-application/my-grid-application.component";
+import {AppComponent} from './app.component';
+import {RedComponentComponent} from './red-component/red-component.component';
+import {AgGridModule} from 'ag-grid-angular';
+import {MyGridApplicationComponent} from './my-grid-application/my-grid-application.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
