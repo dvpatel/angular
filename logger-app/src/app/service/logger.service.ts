@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Logger, Level } from 'angular2-logger/core';
 import {HttpClient} from '@angular/common/http';
 // tslint:disable-next-line:import-blacklist
@@ -18,7 +18,13 @@ export class LoggerService {
   private timerSub: any ;
   private logs: Array<Log> = new Array<Log>();
 
-  constructor(private logger: Logger, private http: HttpClient) {
+  constructor(private ngZone: NgZone, private logger: Logger, private http: HttpClient) {
+
+    //  use ngzone to catch and log all unhandled exceptions ;
+    this.ngZone.onError.subscribe(e => {
+      this.error(e.message) ;
+    });
+    
   }
 
   log(message: string) {
@@ -62,16 +68,15 @@ export class LoggerService {
     }
 
     this.timerSub = Observable.timer(2000).subscribe(x => {
-        const clone  = Object.assign([], this.logs);
+
+        const clone = this.logs.splice(0, this.logs.length) ;
         this.logs = new Array<Log>() ;
         for (let i = 0; i < clone.length; i++ ) {
           this.logger.warn('AfterTime:  ' + JSON.stringify(clone[i]))  ;
         }
 
-        //  localStorage.setItem('eqpm-warn', message);
-        //this.http.get('https://www.nczonline.net/').subscribe(data => {
-        //  this.logger.warn(data) ;
-        //});
+        //  Call XHR2
+        //  if xhr is not available, then put messages back in logs ;
 
     }) ;
   }
