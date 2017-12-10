@@ -6,15 +6,22 @@ import {LoggerService} from './service/logger.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'app';
 
   constructor(private logger: LoggerService) {
+
     this.logger.warn('Warn AppComponent..') ;
     this.logger.log('Log AppComponent..') ;
     this.logger.debug('Debug AppComponent..') ;
     this.logger.error('Error AppComponent..') ;
     this.logger.info('Info AppComponent..') ;
-  }
 
+    //  Force exceptiont to test server logging
+    setTimeout(function() {
+      throw new Error('Forced error exception.  Log to server') ;
+    }, 500) ;
+
+  }
 }
